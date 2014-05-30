@@ -3,7 +3,7 @@
 // @description Download music from vk.com
 // @author Valentine Khatsayuk
 // @license MIT
-// @version 0.0.1
+// @version 0.0.2
 // @include http://vk.com/*
 // ==/UserScript==
 
@@ -33,7 +33,7 @@
     // additional url check.
     if (/http:\/\/vk.com\/\w{6}\d*/.test(w.location.href)) {
         var list = w.document.getElementsByClassName('play_new');
-        addGlobalStyle('.download_new { display: inline-block; padding-left: 20px; top: -15px; position: absolute; }');
+        addGlobalStyle('.download_new { display: block; margin-left: -20px; top: 9px; position: absolute; background-image: url(data:image/gif;base64,R0lGODlhEAAQAJEAAJqxxv///199nf///yH5BAEAAAMALAAAAAAQABAAAAIlHISpCLafzgsBQmpnzQrz5H1C+JGcqVHqlq5siy7rI3Uv43xNAQA7); width: 16px; height: 16px;  }');
         for (var elem of list) {
 
             console.log(elem);
@@ -48,8 +48,8 @@
         var temp;
         temp = w.document.createElement('a');
         temp.className = 'download_new';
-        temp.href = 'url'
-        temp.innerHTML = 'Скачать';
+        temp.href = url;
+        temp.innerHTML = ' ';
         parent.appendChild(temp);
     }
 
